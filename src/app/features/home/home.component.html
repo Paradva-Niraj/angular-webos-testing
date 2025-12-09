@@ -22,7 +22,7 @@
             <swiper-container appSwiper [config]="config" pagination="true" scrollbar="false">
               @for (movie of moviesList | slice:0:15; track movie) {
                 <swiper-slide>
-                  <app-poster-card [model]="movie" [isMovie]="true"></app-poster-card>
+                  <app-poster-card [model]="movie" [isMovie]="true" data-row="1" tabindex="0"></app-poster-card>
                 </swiper-slide>
               }
             </swiper-container>
@@ -54,7 +54,7 @@
             <swiper-container appSwiper [config]="config" pagination="true" scrollbar="false">
               @for (tvShow of tvShowsList | slice:0:15; track tvShow) {
                 <swiper-slide>
-                  <app-poster-card [model]="tvShow"></app-poster-card>
+                  <app-poster-card [model]="tvShow" data-row="2" tabindex="0" ></app-poster-card>
                 </swiper-slide>
               }
             </swiper-container>

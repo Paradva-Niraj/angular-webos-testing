@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1765263000280,
+  "timestamp": 1765280891299,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -74,7 +74,7 @@
     "/assets/svg/github.svg": "29af3297f4216d42d7f6225cafaf77867c016862",
     "/assets/svg/twitter.svg": "4995eac2eb0287f20ac519596fbb8cd528619918",
     "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "/index.html": "27439392f18174ffe6001a08f8d1e8d1046ddfd2",
+    "/index.html": "6538b993fc8cd70defdf7d9f808d3a03ac8f4f20",
     "/manifest.webmanifest": "3a70177f59ce81a84a7476fd1010133abdaefa00"
   },
   "navigationUrls": [

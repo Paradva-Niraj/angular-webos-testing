@@ -1,9 +1,12 @@
 {
-  "id": "movies.com",
+  "id": "com.movies.app",
   "version": "1.0.0",
-  "vendor": "testing in wdv",
+  "vendor": "YourCompany",
   "type": "web",
-  "title": "Movie App",
+  "title": "Movies OTT App",
   "main": "index.html",
-  "icon": "icon.png"
+  "icon": "icon.png",
+  "largeIcon": "assets/img/logo.webp",
+  "bgImage": "assets/img/background-main.webp",
+  "resolution": "1920x1080"
 }

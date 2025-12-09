@@ -12,6 +12,8 @@ import {SlicePipe} from "@angular/common";
 import {SwiperOptions} from "swiper/types";
 import {SwiperDirective} from "../../shared/directives/swiper.directive";
 import {MatIcon} from "@angular/material/icon";
+import { TvNavigationService } from '../content/services/tv-navigation.service';
+import { Router,NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -52,7 +54,9 @@ export class HomeComponent implements OnInit {
   constructor(
     private moviesService: MoviesService,
     private onTvService: OnTVService,
-    private seo: SeoService
+    private seo: SeoService,
+    private tvNav: TvNavigationService,
+     private router: Router,
   ) {}
 
   ngOnInit() {
@@ -65,7 +69,15 @@ export class HomeComponent implements OnInit {
     this.getMovies('now_playing', 1);
     this.getTVShows('airing_today', 1);
   }
+ ngAfterViewInit(): void {
+    this.tvNav.init(); // initialize once
 
+     this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => this.tvNav.refresh(), 100);
+      }
+    });
+  }
   getMovies(type: string, page: number): void {
     this.moviesService.getMovies(type, page).pipe(take(1)).subscribe(res => {
       this.moviesList = res.results;

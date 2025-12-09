@@ -5,6 +5,8 @@ import {themeColors} from './core/constants/theme-colors';
 import {Color} from './core/enums/colors.enum';
 import {NavbarComponent} from "./core/components/navbar/navbar.component";
 import {FooterComponent} from "./core/components/footer/footer.component";
+// import { FocusService } from './focus.service';
+import { TvNavigationService } from './features/content/services/tv-navigation.service';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +25,21 @@ export class AppComponent implements OnInit {
 
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: any
+    @Inject(PLATFORM_ID) private platformId: any,
+    // private focusService: FocusService,
+    private tvNav: TvNavigationService,
+    
   ) {}
+
+   ngAfterViewInit(): void {
+    this.tvNav.init(); // initialize once
+
+     this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => this.tvNav.refresh(), 100);
+      }
+    });
+  }
 
   ngOnInit() {
     this.router.events.subscribe((evt) => {
