@@ -1,0 +1,9 @@
+{
+  "id": "movies.com",
+  "version": "1.0.0",
+  "vendor": "testing in wdv",
+  "type": "web",
+  "title": "Movie App",
+  "main": "index.html",
+  "icon": "icon.png"
+}
